@@ -5,4 +5,27 @@
 -- 1. Begin Project
   >> npx create-next-app@latest
 
-  
+  + _app.tsx --> represents entire application
+  + Whatever page or component we will create will be a child of this app
+
+  + index.tsx --> represent everything rendered on the screen
+  + Represent our index route
+
+-- 2. Core package installations (Chakra-React, Firebase, Recoil)
+  - Charka UI installation
+    >> npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+
+  + npm i firebase recoil
+
+  - Setup Chakra
+    + Import ChakraProvider in _app.tsx
+    + And, wrap your component with it
+
+  + ChakraProvider makes sure you have chakra components available throughout your application
+
+  - Use a /src folder
+    + Create a /src folder
+    + Put /pages and /styles folder inside it 
+    + Restart the server
+
+  + We can completely delete the styles folder because chakra will be handling it for us

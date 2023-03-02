@@ -1,0 +1,8 @@
+[ 02/03/2023 07:15PM Day 01 ]
+
+~ Reddit Clone w/ React, Next.js, Firebase v9, Chakra UI
+
+-- 1. Begin Project
+  >> npx create-next-app@latest
+
+  

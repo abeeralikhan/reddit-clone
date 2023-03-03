@@ -37,6 +37,8 @@
 
 [ 03/03/2023 12:00PM Day 02 ]
 
+--> Video Start @14:12
+
 -- 3. Create Chakra Theme
   + We will be needing no style provided by css
 
@@ -65,7 +67,38 @@
 
   + We can also style chakra ui components in the theme, it's variants etc
 
+-- 4. React TypeScript Intro & NextJS Layout Component
+  + Now will be working on the layout of the page
+
+  + We will create a nextjs layout
+  + This represents the layout of the page
+
+  + Important: We put components in layout that we want to show on every page
+
+  + We wrap the main component inside _app file with the layout component
+
+  + Install React TypeScript Snippets extension in vs code
+
+  - How do we setup layouts in next js?
+    + Create a components folder in the /src directory 
+    + Create a Layout folder
+    + Because, we will be having more than one layout in our application
+    + Create a Layout.ts file
+
+  - TypeScript for react
+    + We specify types for each component
+    + We specify what props we will be passing into it
+    + So, when we will be using it we can prevent the errors
+    + JS lacks this feature
+
+  + React.FC --> Returning a type of a react functional component
+
+  + We wont be needing props inside our layout component, so we can remove LayoutProp type
+
+-- 5. Begin Navbar
   
+
+
 
   
 

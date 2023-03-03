@@ -132,6 +132,28 @@
     + <SearchInput />
     + <RightContent /> --> Different views based on user logged in or not
 
+-- 7. SearchInput Component
+  + We will take user as a prop later
+
+  + We will use <InputGroup /> Component here
+  + <InputLeftElement> / <InputRightElement>
+  + <Input>
+  + Because, in the search bar, there's a search logo and text field
+
+  + <PhoneIcon> --> Coming from Chakra UI Icon Library
+
+  --> Stop @03:05PM
+  --> Start @08:30PM
+
+  - How do we access pseudo classes in chakra ui?
+    + By using a underscore in the beginning
+    + _hover={{ color: 'red', border: '1px solid' }}
+    + _focus
+    + _placeHolder, etc...
+
+
+
+
 
 
 

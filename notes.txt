@@ -2,6 +2,11 @@
 
 ~ Reddit Clone w/ React, Next.js, Firebase v9, Chakra UI
 
+-- Chakra UI
+  + Chakra Provider
+  + Chakra Theme
+  + Chakra Fonts
+
 -- 1. Begin Project
   >> npx create-next-app@latest
 
@@ -29,3 +34,52 @@
     + Restart the server
 
   + We can completely delete the styles folder because chakra will be handling it for us
+
+[ 03/03/2023 12:00PM Day 02 ]
+
+-- 3. Create Chakra Theme
+  + We will be needing no style provided by css
+
+  + All of our styles will be handled by chakra
+
+  + In chakra ui, we can create our customized theme using JS objects
+
+  + Theme contains color that will be present throughout our application such as brand color, accent, shades, etc
+  + It aims to make your application consistent from styling prespective
+
+  - How to initialize chakra theme?
+   + We will keep chakra theme config in a separate chakra directory
+   + Create a new directory in the /src called chakra
+   + Inside it create a file theme.ts
+   + Import "extend theme" function from chakra and setup the theme
+   + Export the theme object
+   + Import the theme object in the _app
+   + Pass it as a prop to chakra provider so it will be available for us throughout the application
+
+  + Chakra UI also provide us with fonts
+  + Chakra UI fonts
+
+  + We can also setup fonts in chakra ui theme
+
+  + We can set global styling by passing a callback which applies it immediately
+
+  + We can also style chakra ui components in the theme, it's variants etc
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

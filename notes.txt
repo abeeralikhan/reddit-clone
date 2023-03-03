@@ -95,8 +95,51 @@
 
   + We wont be needing props inside our layout component, so we can remove LayoutProp type
 
+--> Stop @01:05PM
+--> Start @02:54
+
 -- 5. Begin Navbar
-  
+  + In react, its common to name route files of a folder to be index.tsx
+
+  + We will create a new folder for Navbar
+  + Because Navbar will itself contain bunch of component
+
+  + We will use Navbar component in the layout file
+
+  + <Flex></Flex> --> Applies CSS flexbox
+
+  + We can pass CSS rules as props into the Chakra UI components
+
+-- 6. Navbar Logos & Chakra UI Styling Fundamentals
+  + Image --> To use images
+
+  + Note: When using images from public directory
+  + We dont need to specify the entire relative path from current directory
+  + We can just use /images/imageName.svg
+
+  - Media Queries
+    + We write media queries for single elements
+    + Base --> Mobile Screen Size --> Chakra is mobile first library
+    + Md --> Medium Screen size
+
+    + none / unset
+
+  - How to apply media queries?
+    + propertyName={{base: "value for mobile", md: "value for medium screens"}}
+
+  - We will be making following components for the Navbar
+    + <Directory />
+    + <SearchInput />
+    + <RightContent /> --> Different views based on user logged in or not
+
+
+
+
+
+
+
+
+
 
 
 

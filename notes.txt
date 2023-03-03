@@ -3,9 +3,11 @@
 ~ Reddit Clone w/ React, Next.js, Firebase v9, Chakra UI
 
 -- Chakra UI
-  + Chakra Provider
-  + Chakra Theme
-  + Chakra Fonts
+  + ChakraUI Provider
+  + ChakraUI Theme
+  + ChakraUI Fonts
+  + ChakraUI Icons
+
 
 -- 1. Begin Project
   >> npx create-next-app@latest
@@ -151,6 +153,34 @@
     + _focus
     + _placeHolder, etc...
 
+-- 8. Authentication buttons & Chakra UI global component styling
+  + Now, we will create a RightContent Component
+  + It will have further more components inside it
+  + AuthModal --> SignIn Popup
+  + AuthButtons --> Login / SignUp
+
+  - Why do we need a RightContent Component?
+    + Because, the content situated on the right of the navbar is dynamic
+    + It will be different for signed in users and non-signed in users
+    + Therefore, it will be best if we create it's own component and separate it's conditional logic there
+
+  + Since buttons gonna appear multiple times in our application, so we need consistent styling for them.
+  + Therefore, we will create globla styling for our buttons so we dont have to write the same styles again and again
+
+  + We define global styling of each component in separate file
+  + ComponentStyleConfig --> Type for component styling
+  + With this type, the object will show what are the available values
+  + This is the beauty of typescript
+
+  - We do global styling of components based on following
+    + baseStyle --> Just base style that every variant will follow
+    + sizes --> On different screens
+    + variants --> Solid, Outline, Disabled --> We name them
+
+  + Note: Height, Width, Size of each button will depend on the usage
+  + We will define it wherever we're gonna use them
+  + We dont need to define them in global styling
+   
 
 
 

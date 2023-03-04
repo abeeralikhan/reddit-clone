@@ -183,6 +183,8 @@
    
 [ 04/03/2023 07:10PM Day 03 ]
 
+--> Video start @44:59
+
 -- 9. Authentication Modal Intro
   + We will create a folder for "Modal" in the src directory
   + Because we're gonna have more than one modal
@@ -240,8 +242,26 @@
   + useRecoilState --> Get & Set
   + useSetRecoilState --> Only Set
 
-  
+--> Stop @08:20PM --> 1 hours 10 minutes
+--> Start @08:57PM
 
+-- 11. Authentication Modal Content
+  + Make the modal title dynamic using authModelState 'view'
+
+  - What other components do we need in our AuthModal?
+    + OAuthButtons
+    + AuthInputs
+    + ResetPassword
+
+  + First, we will implement the AuthInputs Component
+  + The AuthInputs has two further more components in it 
+  + Login and SignUp Components
+  + We will show these components conditionally 
+  + If authModalState is login --> <Login>
+  + If authModalState is signup --> <SignUp>
+
+  - How we can use single state for multiple inputs?
+    + 
 
 
 

@@ -2,6 +2,9 @@ import { Button } from "@chakra-ui/react";
 import React from "react";
 
 const AuthButtons: React.FC = () => {
+  // We will use the authModalState here
+  // We will change the state from false to true
+  // But, how're gonna define the view? Login / SignUp
   return (
     <>
       <Button

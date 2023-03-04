@@ -181,6 +181,24 @@
   + We will define it wherever we're gonna use them
   + We dont need to define them in global styling
    
+[ 04/03/2023 07:10PM Day 03 ]
+
+-- 9. Authentication Modal Intro
+  + We will create a folder for "Modal" in the src directory
+  + Because we're gonna have more than one modal
+  + Login/SignUp Modal
+  + Create Community Modal
+
+  + We will create another Auth folder inside Modal
+  + Because, Auth modal itself will have multiple components
+
+  + Copy the Modal code from Chakra UI website
+  + We dont need to use useDisclosure hook
+  + We will create custom implementation of opening and closing the modal
+
+  + Both of the login and signup button will trigger opening of the modal
+
+
 
 
 

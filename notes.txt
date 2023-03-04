@@ -198,7 +198,49 @@
 
   + Both of the login and signup button will trigger opening of the modal
 
+-- 10. Recoil Setup & Intro
+  - Why do we need to implement global state?
+    + Because, the modal open will be triggered from different components
 
+    - For example, 
+      + It will be opened when you wanna vote on a post and you're not logged in
+      + It will be opened when you wanna join a community and you're not logged in
+      + It will be opened when you wanna signin or login from navbar
+
+    + Therefore, we need to lift the modal state from AuthModal component
+
+  + Recoil is much simpler than redux
+
+  - How to setup recoil?
+    1. We need to wrap our app component with <RecoilRoot> component
+      + It will make the global state available in the entire application
+
+    2. Need to create an atom
+      + Atom is same as slice in redux
+      + Atoms contain the source of truth for our application state
+      + Atom is used to initialize the state
+
+    3. Create atoms folder in the /src directory
+      + It's where all of our pieces of global state live
+
+    4. Create a file --> 'authModalAtom.ts'
+
+    5. Create an atom for the authModalState
+      i. Import "atom" from "recoil"
+      ii. Create a type of state's data using interface --> it will contain properties the auth modal atom will have
+      iii. Create a default state object
+      iv. Initialize the atom by passing an object to it
+        + The object will contain two properties
+        + key --> Used to identify the state uniquely
+        + default --> Similar to useState hook --> Pass a default value for the state
+
+  - How to use global state powered by recoil in a component?
+   >> const [state, setState] = useRecoilState(stateAtom);
+
+  + useRecoilState --> Get & Set
+  + useSetRecoilState --> Only Set
+
+  
 
 
 

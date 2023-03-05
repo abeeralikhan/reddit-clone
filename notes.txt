@@ -275,7 +275,7 @@
 -- 12. OAuth Buttons (Sign In w/ Google, Facebook, Github, etc.)
 
 --> Pause @11:16PM --> 34 minutes
---> Resumt @12:50PM
+--> Resume @12:50PM
 
 -- 13. Firebase Setup
   - Steps to setup firebase
@@ -290,7 +290,30 @@
   + We will check getApps.length if it's zero, we will initialize it 
   + Otherwise, we will get the already initialized app
 
+-- 14. User Creation
+  + We will be using react-firebase-hooks npm package to interact with firebase app
 
+  + For creating a new user
+  + We will be using useCreateUserWithEmailAndPassowrd hook
+  + It will return createUserWithEmailAndPassword function, the user itself, loading, and error states
+
+  + We set errors in frontend by using useState hook
+
+  + Important
+  + ChakraUI Buttons consist an attribute called loading
+  + If the state of the button is loading, then it will loading animation
+
+-- 15. Firebase Error Handling (TypeScript indexing, custom error messages)
+  - What if we try to signup a user that already exists
+    + Firebase will respond with a error
+    + We will handle it by using userError variable provided by the react-firebase-hooks library
+
+  + We will map firebase errors using an object
+
+  + When we pass userError.message as key to FIREBASE_ERRORS object
+  + We will get a typescript indexing error
+  + We can solve by using type casting like follows
+  >> FIREBASE_ERRORS[userError.message as keyof typeof FIREBASE_ERRORS]
 
 
 

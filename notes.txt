@@ -97,8 +97,8 @@
 
   + We wont be needing props inside our layout component, so we can remove LayoutProp type
 
---> Stop @01:05PM
---> Start @02:54
+--> Pause @01:05PM
+--> Resume @02:54
 
 -- 5. Begin Navbar
   + In react, its common to name route files of a folder to be index.tsx
@@ -242,8 +242,8 @@
   + useRecoilState --> Get & Set
   + useSetRecoilState --> Only Set
 
---> Stop @08:20PM --> 1 hour 10 minutes
---> Start @08:57PM
+--> Pause @08:20PM --> 1 hour 10 minutes
+--> Resume @08:57PM
 
 -- 11. Authentication Modal Content
   + Make the modal title dynamic using authModelState 'view'
@@ -273,8 +273,22 @@
 [ 05/03/2023 10:42PM Day 04 ]
 
 -- 12. OAuth Buttons (Sign In w/ Google, Facebook, Github, etc.)
-  + 
 
+--> Pause @11:16PM --> 34 minutes
+--> Resumt @12:50PM
+
+-- 13. Firebase Setup
+  - Steps to setup firebase
+    1. Create a new project
+    2. Register app (web app, ios, android, flutter, etc)
+    3. Add firebase SDK to your application (config)
+
+  + Note: NEXT JS performs SSR as well as CSR
+  + If we initialize our the default way, it will initialize it on the server, and as well as on the client
+  + To prevent this issue, we will two functions from firebase
+  + getApps() and getApp()
+  + We will check getApps.length if it's zero, we will initialize it 
+  + Otherwise, we will get the already initialized app
 
 
 

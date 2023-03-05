@@ -25,7 +25,7 @@ const Login: React.FC = () => {
       <Input
         required
         name="email"
-        placeholder="email"
+        placeholder="Email"
         type="email"
         mb={2}
         onChange={onInputChange}
@@ -43,7 +43,7 @@ const Login: React.FC = () => {
       <Input
         required
         name="password"
-        placeholder="password"
+        placeholder="Password"
         type="password"
         onChange={onInputChange}
         mb={2}

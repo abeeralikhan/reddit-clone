@@ -26,7 +26,7 @@ const SignUp: React.FC = () => {
       <Input
         required
         name="email"
-        placeholder="email"
+        placeholder="Email"
         type="email"
         mb={2}
         onChange={onInputChange}
@@ -44,7 +44,7 @@ const SignUp: React.FC = () => {
       <Input
         required
         name="password"
-        placeholder="password"
+        placeholder="Password"
         type="password"
         onChange={onInputChange}
         mb={2}
@@ -62,7 +62,7 @@ const SignUp: React.FC = () => {
       <Input
         required
         name="confirmPassword"
-        placeholder="confirm password"
+        placeholder="Confirm password"
         type="password"
         onChange={onInputChange}
         mb={2}

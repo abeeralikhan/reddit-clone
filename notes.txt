@@ -242,7 +242,7 @@
   + useRecoilState --> Get & Set
   + useSetRecoilState --> Only Set
 
---> Stop @08:20PM --> 1 hours 10 minutes
+--> Stop @08:20PM --> 1 hour 10 minutes
 --> Start @08:57PM
 
 -- 11. Authentication Modal Content
@@ -261,10 +261,19 @@
   + If authModalState is signup --> <SignUp>
 
   - How we can use single state for multiple inputs?
-    + 
+    + Using dynamic property
 
+    >> {
+      ...prev,
+      [event.target.name]: event.target.name
+    }
 
+--> Stop @10:10PM --> 1 hour 13 minutes --> Video @1:18:57
 
+[ 05/03/2023 10:42PM Day 04 ]
+
+-- 12. OAuth Buttons (Sign In w/ Google, Facebook, Github, etc.)
+  + 
 
 
 

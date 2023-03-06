@@ -39,7 +39,7 @@
 
 [ 03/03/2023 12:00PM Day 02 ]
 
---> Video Start @14:12
+--> Video starts @14:12
 
 -- 3. Create Chakra Theme
   + We will be needing no style provided by css
@@ -183,7 +183,7 @@
    
 [ 04/03/2023 07:10PM Day 03 ]
 
---> Video start @44:59
+--> Video starts @44:59
 
 -- 9. Authentication Modal Intro
   + We will create a folder for "Modal" in the src directory
@@ -268,9 +268,11 @@
       [event.target.name]: event.target.name
     }
 
---> Stop @10:10PM --> 1 hour 13 minutes --> Video @1:18:57
+--> Stop @10:10PM --> 1 hour 13 minutes --> Video starts @1:18:57
 
 [ 05/03/2023 10:42PM Day 04 ]
+
+--> Video starts @1:18:57
 
 -- 12. OAuth Buttons (Sign In w/ Google, Facebook, Github, etc.)
 
@@ -315,7 +317,16 @@
   + We can solve by using type casting like follows
   >> FIREBASE_ERRORS[userError.message as keyof typeof FIREBASE_ERRORS]
 
+-- 16. Google Authentication (useSignInWithGoogle hook)
+  + Enable "Google Provider" from google
 
+  + SignUp using a provider is same as logging in using the service provider
+  + Same logic is used in both areas
+
+-- 17. Sign In Existing Users
+
+-- 18. useAuthState firebase hook
+  + 
 
 
 

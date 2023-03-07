@@ -325,8 +325,37 @@
 
 -- 17. Sign In Existing Users
 
+[ 07/03/2023 04:10AM Day 05 ]
+
+--> Video starts @1:56:54
+
 -- 18. useAuthState firebase hook
-  + 
+  + We have to do something useful once the user has logged in 
+  + We also need to tell the user that it has logged in
+
+  + Now, we need to obtain logged in user and do somethin useful with it
+  + We implement this logic using the useAuthState hook
+
+  + Once we logged in, we need to close the modal
+  + We will implement this logic in AuthModal component
+  + The useAuthState hook returns three values --> user, loading, error
+  + We will use useEffect hook, and put the user in its dependency array
+  + If the state of the user changes, useEffect will run, closing the modal
+
+  + There are two ways to use user
+  + Call useAuthState in each component
+  + OR, call it once in Navbar component, and pass it as prop to other components
+
+  - How to implement sign out logic?
+    + import signOut function from firebase/auth
+    + Run it by passing the auth object --> signOut(auth)
+
+  + useAuthState hook persist the user if the page refreshes or user comes back after few days
+
+-- 19. Reset Passwords (useSendPasswordResetEmail)
+  >> npm i react-icons
+
+  
 
 
 

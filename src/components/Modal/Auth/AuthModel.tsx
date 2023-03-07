@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AuthInputs from "./AuthInputs";
+import OAuthButtons from "./OAuthButtons";
 import {
   Modal,
   ModalOverlay,
@@ -11,11 +13,12 @@ import {
 } from "@chakra-ui/react";
 import { useRecoilState } from "recoil";
 import { authModalState } from "@/src/atoms/authModalAtom";
-import AuthInputs from "./AuthInputs";
-import OAuthButtons from "./OAuthButtons";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "@/src/firebase/clientApp";
 
 const AuthModel: React.FC = () => {
   const [modalState, setModalState] = useRecoilState(authModalState);
+  const [user, loading, error] = useAuthState(auth);
 
   const handleModalClose = () => {
     setModalState((prev) => ({
@@ -23,6 +26,12 @@ const AuthModel: React.FC = () => {
       open: false,
     }));
   };
+
+  useEffect(() => {
+    if (user) handleModalClose();
+    console.log("user", user);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
 
   return (
     <>
@@ -48,12 +57,17 @@ const AuthModel: React.FC = () => {
               justify="center"
               width="70%"
             >
-              <OAuthButtons />
-              <Text color="gray.500" fontWeight={700}>
-                OR
-              </Text>
-              <AuthInputs />
-              {/* <ResetPassword /> */}
+              {modalState.view === "login" || modalState.view === "signup" ? (
+                <>
+                  <OAuthButtons />
+                  <Text color="gray.500" fontWeight={700}>
+                    OR
+                  </Text>
+                  <AuthInputs />
+                </>
+              ) : (
+                <ResetPassword />
+              )}
             </Flex>
           </ModalBody>
         </ModalContent>

@@ -21,7 +21,6 @@ const Icons: React.FC = () => {
         <IconBody>
           <Icon as={BsArrowUpRightCircle} fontSize={20} />
         </IconBody>
-
         <IconBody>
           <Icon as={IoFilterCircleOutline} fontSize={22} />
         </IconBody>

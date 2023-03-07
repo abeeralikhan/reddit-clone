@@ -355,8 +355,16 @@
 -- 19. Reset Passwords (useSendPasswordResetEmail)
   >> npm i react-icons
 
-  
+  + We can await the network requests 
+  + If there is some code that's supposed to run just right after the network request
+  + We can await so the next line of code waits for the network request to complete
 
+--> Pause @05:25AM
+--> Resume @2:10PM
+
+-- 20. Navbar Icons (react-icons)
+
+-- 21. User Dropdown Menu
 
 
 

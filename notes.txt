@@ -359,7 +359,7 @@
   + If there is some code that's supposed to run just right after the network request
   + We can await so the next line of code waits for the network request to complete
 
---> Pause @05:25AM
+--> Pause @05:25AM --> 1 hour and 15 minutes
 --> Resume @02:10PM
 
 -- 20. Navbar Icons (react-icons)
@@ -369,11 +369,18 @@
   + We are wrapping each icon inside in another flex element
   + Because of the hover effect
 
---> Pause @02:30PM
+--> Pause @02:30PM --> 20 minutes
 --> Resume @07:25PM
 
 -- 21. User Dropdown Menu
-  + 
+
+--> Pause @09:00PM --> 1 hour and 35 minutes
+--> Resume @11:28PM 
+
+-- 22. User Karma (custom user properties)
+
+--> stop @11:39PM --> 11 Minutes
+
 
 
 

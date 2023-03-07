@@ -5,7 +5,7 @@ import AuthModel from "../../Modal/Auth/AuthModel";
 import { signOut, User } from "firebase/auth";
 import { auth } from "@/src/firebase/clientApp";
 import Icons from "./Icons/Icons";
-import UserMenu from "./UserMenu";
+import UserMenu from "./UserMenu/UserMenu";
 
 type RightContentProps = {
   user?: User | null;

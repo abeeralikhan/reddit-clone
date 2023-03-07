@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import AuthInputs from "./AuthInputs";
 import OAuthButtons from "./OAuthButtons";
+import ResetPassword from "./ResetPassword";
 import {
   Modal,
   ModalOverlay,

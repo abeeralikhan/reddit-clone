@@ -19,4 +19,5 @@ const IconBody: React.FC<IconBodyProps> = ({ children }) => {
     </Flex>
   );
 };
+
 export default IconBody;

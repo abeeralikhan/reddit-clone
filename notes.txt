@@ -396,6 +396,11 @@
   - How to stop the logo from shrinking?
     + Give it a width!!
 
+-- 24. Create Community Modal 1: Skeletion
+  + Defining a function type in type typescript
+  >> type props {
+    fnName: (arg: ArgType, ...) => fnReturnType;
+  }
 
 
 

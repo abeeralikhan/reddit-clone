@@ -384,6 +384,8 @@
 
 [ 09/03/2023 06:00PM Day 06 ]
 
+--> Video Start @02:28:55
+
 -- 23. Community Directory in Navbar
   - How can we make the search bar grow while user is signed in and have a fixed size when user is logged out?
     + We can take the user object in the arguement
@@ -402,8 +404,15 @@
     fnName: (arg: ArgType, ...) => fnReturnType;
   }
 
+-- 25. Create Community Modal 2: Body (input, char count, community type)
+  + What is the <Stack /> component?
+    + It's to maintain similar spacing between its children
+    + It's like a stack
 
+  + We can also change the size of the modals in chakra ui
 
+--> Stop @11:21PM
+--> Video stop @03:01:33
 
   
 

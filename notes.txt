@@ -327,7 +327,7 @@
 
 [ 07/03/2023 04:10AM Day 05 ]
 
---> Video starts @1:56:54
+--> Video starts @01:56:54
 
 -- 18. useAuthState firebase hook
   + We have to do something useful once the user has logged in 
@@ -379,7 +379,22 @@
 
 -- 22. User Karma (custom user properties)
 
---> stop @11:39PM --> 11 Minutes
+--> Stop @11:39PM --> 11 Minutes
+--> Video @02:29:00 
+
+[ 09/03/2023 06:00PM Day 06 ]
+
+-- 23. Community Directory in Navbar
+  - How can we make the search bar grow while user is signed in and have a fixed size when user is logged out?
+    + We can take the user object in the arguement
+    + We can use maxwidth property
+    + If user is logged in, set maxwidth to be auto
+    + If user is logged out, set maxwidth to be fixed 600px
+
+  + Maxwidth --> Can become smaller but cant exceed the given width
+
+  - How to stop the logo from shrinking?
+    + Give it a width!!
 
 
 

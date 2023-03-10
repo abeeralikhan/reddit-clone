@@ -31,14 +31,14 @@ const CreateCommunityModal: React.FC<CreateCommunityModalProps> = ({
 }) => {
   const MAX_COMMUNITY_LENGTH = 21;
   const [communityName, setCommunityName] = useState("");
-  const [charsRemaining, SetCharsRemaining] = useState(MAX_COMMUNITY_LENGTH);
+  const [charsRemaining, setCharsRemaining] = useState(MAX_COMMUNITY_LENGTH);
   const [communityType, setCommunityType] = useState("public");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value.length > MAX_COMMUNITY_LENGTH) return;
 
     setCommunityName(event.target.value);
-    SetCharsRemaining(MAX_COMMUNITY_LENGTH - event.target.value.length);
+    setCharsRemaining(MAX_COMMUNITY_LENGTH - event.target.value.length);
   };
 
   const onCommunityChange = (event: React.ChangeEvent<HTMLInputElement>) => {

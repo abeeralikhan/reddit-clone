@@ -414,6 +414,43 @@
 --> Stop @11:21PM
 --> Video stop @03:01:33
 
+[ 10/03/2023 10:15PM Day 07 ]
+
+--> Video start @03:01:33
+
+-- 26. Create Communities & Cloud Firestore Database
+  + We will be doing database transactions, batch rights, etc
+
+  - Example of collections
+    + Community
+    + Post
+    + Comment
+
+  + We will access our firstore database using the firestore object
+  + We are exporting the firestore object from clientApp.ts
+  + We will use it anytime we try to interact with our database
+
+  + To check if a community name already present in the databse or not
+  + We will create a document reference
+
+  + In firestore, we have document reference, and then document itself
+
+  - How to get a specific document in firebase?
+    1. Create document reference
+      >> const docRef = doc(firestore, '<COLLECTION_NAME>', '<DOCUMENT_ID>');
+      >> const communityDocRef = doc(firestore, 'communities', communityName);
+
+    2. Get the document using the document reference
+      >> const document = getDoc(docRef);
+      >> const communityDoc = getDoc(communityDocRef);
+
+    + doc() --> Firebase function to get a document reference
+    + getDoc() --> Firebase function to get the document
+
+
+
+
+
   
 
 

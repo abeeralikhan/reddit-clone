@@ -19,6 +19,9 @@ import {
 import { BsFillEyeFill, BsFillPersonFill } from "react-icons/bs";
 import { HiLockClosed } from "react-icons/hi";
 import React, { useState } from "react";
+import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
+import { auth, firestore } from "@/src/firebase/clientApp";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 type CreateCommunityModalProps = {
   open: boolean;
@@ -30,9 +33,12 @@ const CreateCommunityModal: React.FC<CreateCommunityModalProps> = ({
   handleClose,
 }) => {
   const MAX_COMMUNITY_LENGTH = 21;
+  const [user] = useAuthState(auth);
   const [communityName, setCommunityName] = useState("");
   const [charsRemaining, setCharsRemaining] = useState(MAX_COMMUNITY_LENGTH);
   const [communityType, setCommunityType] = useState("public");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value.length > MAX_COMMUNITY_LENGTH) return;
@@ -43,6 +49,43 @@ const CreateCommunityModal: React.FC<CreateCommunityModalProps> = ({
 
   const onCommunityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCommunityType(event.target.name);
+  };
+
+  const handleCreateCommunity = async () => {
+    if (error) setError("");
+    // Validate the community --> must not be taken
+    const format = /[ `~!@#$%^&*()-=+\[\]|{;:'"\/?.>,<}]/;
+
+    if (format.test(communityName) || communityName.length < 3) {
+      setError(
+        "Community names must be between 3-21 characters, and can only contain letters, numbers or underscores."
+      );
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const communityDocRef = doc(firestore, "communites", communityName);
+      const communityDoc = await getDoc(communityDocRef);
+
+      // Check if name is taken or not
+      if (communityDoc.exists()) {
+        throw new Error(`Sorry, r/${communityName} is taken. Try another!`);
+      }
+
+      // Create the community document in the firestore
+      await setDoc(communityDocRef, {
+        creatorId: user?.uid,
+        createdAt: serverTimestamp(),
+        numberOfMembers: 1,
+        privacyType: communityType,
+      });
+    } catch (error: any) {
+      setError(error.message);
+      console.log("handleCreateCommunity error", error);
+    }
+    setLoading(false);
   };
 
   return (
@@ -86,6 +129,9 @@ const CreateCommunityModal: React.FC<CreateCommunityModalProps> = ({
               />
               <Text color={!charsRemaining ? "red" : "gray.500"} fontSize="9pt">
                 {charsRemaining} Characters remaining
+              </Text>
+              <Text fontSize="9pt" color="red" pt={1}>
+                {error}
               </Text>
               <Box mt={4} mb={4}>
                 <Text fontWeight={600} fontSize={15}>
@@ -155,7 +201,11 @@ const CreateCommunityModal: React.FC<CreateCommunityModalProps> = ({
             >
               Cancel
             </Button>
-            <Button height="30px" onClick={() => {}}>
+            <Button
+              height="30px"
+              onClick={handleCreateCommunity}
+              isLoading={loading}
+            >
               Create Community
             </Button>
           </ModalFooter>

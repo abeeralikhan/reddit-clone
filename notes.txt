@@ -447,6 +447,56 @@
     + doc() --> Firebase function to get a document reference
     + getDoc() --> Firebase function to get the document
 
+  - How to create new documents?
+    + By using, setDoc() function
+
+--> Pause @11:35PM
+--> Resume @03:30AM
+
+-- 27. Joining Communities 1
+  + We want users to join our communities
+  + This will lead to modeling data with NoSQL
+
+  + What happends when a user joins a community --> SQL vs NoSQL
+  + From user prespective --> How many communites have they joined?
+  + From community prespective --> How many users are in it?
+
+  + A user can join many communities
+  + A community can have many users 
+
+  + Therefore, it's a many-to-many relation
+  + We need a join table between them --> SQL
+
+  + However, we have a little freedom in NoSQL
+  + We can design the relationship however we want
+  + But, we can run into scalability issue really quickly
+
+  - We have three options:
+    1. Either store array of users in communites or store array of communites in users
+    2. Make a join table --> But, NoSQL has no join queries, we need to write more queries to make it happen
+    3. Store an array of communites objects in the users 
+
+  + We will be going with the option no. 3
+  + Because, a community can have millions of users
+  + An array cannot hold that many elements
+
+-- 28. Cloud Functions
+  + We need to store communitySnippets sub-collection on user
+  + But, we have a problem --> We dont have a collection called users 
+  + Because, firebase auth service is completely different from its firestore service
+  + They are not linked
+
+  - We can solve this issues by using cloud functions
+    + We want to listen to auth
+    + Whenever a new user is created
+    + We want to create its document in the firestore database
+
+  + To use cloud functions, we need to upgrade our project from free to pay-as-you-go project
+
+
+
+
+
 
 
 

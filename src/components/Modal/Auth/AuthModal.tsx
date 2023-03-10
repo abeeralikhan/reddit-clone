@@ -30,7 +30,6 @@ const AuthModel: React.FC = () => {
 
   useEffect(() => {
     if (user) handleModalClose();
-    console.log("user", user);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 

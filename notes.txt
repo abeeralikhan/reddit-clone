@@ -493,7 +493,44 @@
 
   + To use cloud functions, we need to upgrade our project from free to pay-as-you-go project
 
+--> Stop @04:50AM
+--> Video @03:44:15
 
+[ 11/03/2023 08:26PM Day 08 ]
+
+-- 29. Joining Communites 2 (Firebase Transactions and Sub-Collections)
+  + What is a database transaction?
+  + Transaction --> Set of read/write operations on one or more documents
+  + Transactions are useful because they represent all or nothing operations
+  + If you're performing a set of operations on a database that are part of a transaction
+  + If one of them fails, we have to fail the entire transaction because the operations are dependent on each other
+
+  - Why do we care about it?
+    - When we're creating a community, we're doing two things
+      1. Create community document
+      2. Update user's sub-document
+
+    + They are dependent on each other
+    + If community is failed to be created, we dont want to update the user's document
+
+    + Therefore, "Transactions" are very usefull
+
+  + Transaction is similar to batch writes
+  + But, there's a slide difference to it
+
+  - How do we implement transactions in firebase?
+    + using firebase runTransaction function
+      >> runTransaction(firestore, (transaction) => {})
+
+    + It receives a transaction object in the callback
+    + We will use the transaction object to perform update, set, get, and delete operations
+    + Only transaction.get(docRef) needs to be awaited
+
+    + We will still use doc() function to create references
+
+  + To update a sub-collection inside a document, we use absolute path
+  >> collectionName/documentName/subcollectionName
+  >> collectionName/documentName/subcollectionName/documentName/subcollectionName
 
 
 

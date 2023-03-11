@@ -19,7 +19,13 @@ import {
 import { BsFillEyeFill, BsFillPersonFill } from "react-icons/bs";
 import { HiLockClosed } from "react-icons/hi";
 import React, { useState } from "react";
-import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  runTransaction,
+  serverTimestamp,
+  setDoc,
+} from "firebase/firestore";
 import { auth, firestore } from "@/src/firebase/clientApp";
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -53,9 +59,9 @@ const CreateCommunityModal: React.FC<CreateCommunityModalProps> = ({
 
   const handleCreateCommunity = async () => {
     if (error) setError("");
-    // Validate the community --> must not be taken
     const format = /[ `~!@#$%^&*()-=+\[\]|{;:'"\/?.>,<}]/;
 
+    // Validate the community --> must not be taken
     if (format.test(communityName) || communityName.length < 3) {
       setError(
         "Community names must be between 3-21 characters, and can only contain letters, numbers or underscores."
@@ -64,22 +70,33 @@ const CreateCommunityModal: React.FC<CreateCommunityModalProps> = ({
     }
 
     setLoading(true);
-
     try {
       const communityDocRef = doc(firestore, "communites", communityName);
-      const communityDoc = await getDoc(communityDocRef);
 
-      // Check if name is taken or not
-      if (communityDoc.exists()) {
-        throw new Error(`Sorry, r/${communityName} is taken. Try another!`);
-      }
+      await runTransaction(firestore, async (transaction) => {
+        const communityDoc = await transaction.get(communityDocRef);
 
-      // Create the community document in the firestore
-      await setDoc(communityDocRef, {
-        creatorId: user?.uid,
-        createdAt: serverTimestamp(),
-        numberOfMembers: 1,
-        privacyType: communityType,
+        // Check if name is taken or not
+        if (communityDoc.exists()) {
+          throw new Error(`Sorry, r/${communityName} is taken. Try another!`);
+        }
+
+        // Create the community document in the firestore
+        transaction.set(communityDocRef, {
+          creatorId: user?.uid,
+          createdAt: serverTimestamp(),
+          numberOfMembers: 1,
+          privacyType: communityType,
+        });
+
+        // Update communitySnippets on user
+        transaction.set(
+          doc(firestore, `users/${user?.uid}/communitySnippets`, communityName),
+          {
+            communityId: communityName,
+            isModerator: true,
+          }
+        );
       });
     } catch (error: any) {
       setError(error.message);

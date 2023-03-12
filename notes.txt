@@ -570,7 +570,10 @@
   + If there are timestamps in the data, getServerSideProps maybe not able to handle it
   + SOLUTION: By using a packge safe-json-stringify
 
+-- 31. Community Not Found component
+  + If community does not exist, we will send am empty string as prop from server
 
+  + On client, if we get an empty string, we will render the community not found component
 
 
 

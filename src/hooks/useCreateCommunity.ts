@@ -54,7 +54,7 @@ export default function useCreateCommunity() {
       });
     } catch (error: any) {
       setError(error.message);
-      console.log("handleCreateCommunity error", error);
+      console.log("useCreateCommunity error", error);
     }
     setLoading(false);
   };

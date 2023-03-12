@@ -532,6 +532,47 @@
   >> collectionName/documentName/subcollectionName
   >> collectionName/documentName/subcollectionName/documentName/subcollectionName
 
+[ 12/03/2023 07:48PM Day 09 ]
+
+-- 30. Community Page (Server Side Rending and Data Fetching)
+  + We will perform server side rendering in next js
+
+  + The client side route of a reddit community looks something like this
+  >> /r/communityName
+
+  - Therefore, our folder structure will look something like this
+    - pages
+      - r --> static route
+        + [communityId]
+          + index.tsx --> root / --> /r/communityName
+          + submit.tsx --> /r/communityName/submit
+
+  - How will we use server rendering?
+    + We just have to export getServerSideProps function, and nextjs will perform server rendering on it
+
+    + By using a function getServerSideProps
+    + This function is called on the nextjs server
+    + Data is fetched from the database
+    + Then, the data is passed to the component
+    + Server renders the component
+    + Then, this component is sent to the client
+
+    + In other words, this page is pre-build before showing it to the user
+    + Client will think data is appeared magically from somewhere
+    + Whereas, the data was fetched and rendered on the server side
+    
+  + Reddit uses a mix of server side rendering and client side rendering
+
+  + For client-side rendering, nextjs uses something known as "hydration"  
+  
+  + NextJS allows us to make custom pages if error occurs in getServerSideProps
+
+  + If there are timestamps in the data, getServerSideProps maybe not able to handle it
+  + SOLUTION: By using a packge safe-json-stringify
+
+
+
+
 
 
 

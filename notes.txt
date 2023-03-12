@@ -619,7 +619,17 @@
     >> const child1 = children[0];
     >> const child2 = children[1];
 
+-- 34. Community Data Recoil Atom (global communites state)
+  - To show the communities the user have joined on the navbar, and on the community page, we need to:
+    1. Make a reusable useCommunityData hook to get data
+    2. Make global community state
+
+  + Multiple components in our app need to utilize the community snippets data
   
+
+  
+
+
 
 
 

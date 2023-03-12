@@ -5,6 +5,7 @@ import { GetServerSidePropsContext } from "next";
 import safeJsonStringify from "safe-json-stringify";
 import CommunityNotFound from "@/src/components/Community/CommunityNotFound";
 import React from "react";
+import Header from "@/src/components/Community/Header";
 
 type CommunityPageProps = {
   communityData: Community;
@@ -14,7 +15,11 @@ const CommunityPage: React.FC<CommunityPageProps> = ({ communityData }) => {
   if (!communityData) {
     return <CommunityNotFound />;
   }
-  return <div>WELCOME TO {communityData.id}</div>;
+  return (
+    <>
+      <Header communityData={communityData} />
+    </>
+  );
 };
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
@@ -25,7 +30,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
       "communites",
       context.query.communityId as string // type casted to string
     );
-
     const communityDoc = await getDoc(communityDocRef);
 
     if (!communityDoc.exists()) {

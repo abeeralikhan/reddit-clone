@@ -518,6 +518,9 @@
   + Transaction is similar to batch writes
   + But, there's a slide difference to it
 
+  - How do we get params from url?
+    >> context.query.paramName
+
   - How do we implement transactions in firebase?
     + using firebase runTransaction function
       >> runTransaction(firestore, (transaction) => {})
@@ -561,6 +564,17 @@
     + Client will think data is appeared magically from somewhere
     + Whereas, the data was fetched and rendered on the server side
     
+  - How can we receive data passed as props from getServerSideProps function to other components?
+    + There will be no jsx in the getServerSideProps function
+    + It returns an object consisting of a property named props
+    >> return { props: { ...props } }
+
+    + We can pass data as props by assigning it to the props object
+    >> return { props: { userData } }
+
+    + Therefore, we will receive the data consist in the props object as props in other components
+    >> const Component = ({ userData }) => {}
+
   + Reddit uses a mix of server side rendering and client side rendering
 
   + For client-side rendering, nextjs uses something known as "hydration"  
@@ -575,7 +589,12 @@
 
   + On client, if we get an empty string, we will render the community not found component
 
+-- 32. Community Page Header component
+  + Header will take CommunityData as prop
 
+  + flexGrow --> Take all the remaining height
+
+  + Join functionality will be a part of global community atom
 
 
 

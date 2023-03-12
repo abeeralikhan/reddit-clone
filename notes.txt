@@ -625,7 +625,34 @@
     2. Make global community state
 
   + Multiple components in our app need to utilize the community snippets data
-  
+
+-- 35. useCommunityData Custom Hook
+  + The functionality for joining and leaving the community is also shared by multiple components as well
+
+  + That's why we need to create a custom hook
+  + We can keep repeated state and logic inside the custom hooks
+
+  - useCommunityData
+    + communitesState
+    + joinCommunity
+    + leaveCommunity
+
+  - useCommunityData will be used by following components
+    + Header
+    + MyCommunitesDropdown
+    + Top Communites
+
+  + In react, if there's a repeated data that is required at multiple places, we can use a custom hook for it
+
+  - How to booleanize something?
+    >> By using double bangs --> !!
+    >> !!5 --> true
+    >> !!'' --> false
+    >> !!'something' --> true
+
+
+
+
 
   
 

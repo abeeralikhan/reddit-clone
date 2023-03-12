@@ -596,6 +596,30 @@
 
   + Join functionality will be a part of global community atom
 
+-- 33. Custom PageContent Layout component (React children)
+  + Home, Community, and Submit Community Page layouts are same
+  + We can create a page layout component that we can reuse
+  + So, we dont have to write the same css again and again
+
+  - How to pass more than one component as children to other components?
+    + By wrapping each component in fragment
+    >> <OtherComponent>
+        <>
+          <Child1 />
+        </>
+        <>
+          <Child2 />
+        </>
+       </OtherComponent>
+
+  - How can we get multple children components?
+    + When we use fragments to pass multiple components as children
+    + The children object becomes an array
+
+    >> const child1 = children[0];
+    >> const child2 = children[1];
+
+  
 
 
 

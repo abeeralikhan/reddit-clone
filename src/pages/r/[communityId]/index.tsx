@@ -6,6 +6,7 @@ import safeJsonStringify from "safe-json-stringify";
 import CommunityNotFound from "@/src/components/Community/CommunityNotFound";
 import React from "react";
 import Header from "@/src/components/Community/Header";
+import PageContent from "@/src/components/Layout/PageContent";
 
 type CommunityPageProps = {
   communityData: Community;
@@ -18,6 +19,14 @@ const CommunityPage: React.FC<CommunityPageProps> = ({ communityData }) => {
   return (
     <>
       <Header communityData={communityData} />
+      <PageContent>
+        <>
+          <div>LHS</div>
+        </>
+        <>
+          <div>RHS</div>
+        </>
+      </PageContent>
     </>
   );
 };

@@ -650,7 +650,31 @@
     >> !!'' --> false
     >> !!'something' --> true
 
+-- 36. Fetch User Community Snippets (getMyCommunites function)
+  + For fetching a single doc ref, we use --> doc(firestore, path, docId)
+  + For fetching a collection/sub-collection ref, we use --> collection(firestore, path)
 
+  + For fetching a single doc, we use getDoc(docRef)
+  + For fetching a collection/sub-collection, we use getDocs(collectionRef)
+
+  + Collections (Docs) --> collection + getDocs
+  + Doc --> doc + getDoc
+
+  + Note: We wanna fetch snippets, once the user is logged in
+  + We can call getMySnippets function inside a useEffect hook
+  + It will load snippets as the hook is called
+
+  + But, we dont want to fetch snippets if there is not user
+  + Therefore, in the dependency array, we will use user object
+  + And, we will create a guard, if user doesnot exist return
+
+  + Therefore, as new users logged in, new snippets relative to them will be fetched
+
+  + Note: When we log the user out, we need to clear the communitesState
+  + This will be done by using useResetRecoilState(atom);
+  + We just need to call it, and will reset the state to default
+
+  + Therefore, when we log out a user, in communites, joined will be changed to join
 
 
 

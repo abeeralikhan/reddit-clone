@@ -676,6 +676,32 @@
 
   + Therefore, when we log out a user, in communites, joined will be changed to join
 
+[ 15/03/2023 06:15PM Day 10 ]
+
+-- 37. Join & Leave Communites (Firestore Database Batched Writes)
+  - What is the difference between transactions and batch writes?
+    + In transactions, we perform read and write operations
+    + Whereas, in batch writes, we only perform write operations 
+
+  + Transactions --> Read + Write
+  + Batch writes --> Writes
+
+  + As we writes some operations to the firestore database
+  + We also need to update communites global state to reflect the change on the UI
+
+  - How to perform batch write operations?
+    1. import writeBatch() function from firebase
+    2. initialize it by passing the firestore object
+    3. store it in a variable
+
+  + batch.set() --> for inserting a newly create document
+  + batch.update() --> for updating an existing document
+
+  + batch.update() --> Pass only the updated field, other fields would be as it is
+
+  + batch.commit() --> To execute batch writes and save changes
+
+
 
 
   

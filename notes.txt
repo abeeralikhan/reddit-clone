@@ -709,7 +709,15 @@
     + call it --> const router = useRouter();
     + redirect user --> router.push(NEW_URL)
 
-  
+--> Resume @10:43PM
+
+-- 39. NewPostForm 1: FormTabsComponent (Multi-step React forms)
+  + Our form will have a navbar that will be statefull
+  + It will highlight on which tab you are on
+
+  + Static variables are created outside react component
+  + Because it's not something related to react
+  + e.g. constants, etc.
 
 
   

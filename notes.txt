@@ -701,7 +701,15 @@
 
   + batch.commit() --> To execute batch writes and save changes
 
+-- 38. Create Post Page & CreatePostLink Component
+  + Creating a post inside a community
+  
+  - How to redirect a user from one url to another?
+    + Using userRouter hook from 'next/router'
+    + call it --> const router = useRouter();
+    + redirect user --> router.push(NEW_URL)
 
+  
 
 
   

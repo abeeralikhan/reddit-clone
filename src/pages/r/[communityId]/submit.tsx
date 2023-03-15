@@ -1,8 +1,6 @@
 import React from "react";
 
-type SubmitPageProps = {};
-
-const SubmitPage: React.FC<SubmitPageProps> = () => {
+const SubmitPostPage: React.FC = () => {
   return <div>SubmitPage</div>;
 };
-export default SubmitPage;
+export default SubmitPostPage;

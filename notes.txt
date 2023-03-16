@@ -719,6 +719,10 @@
   + Because it's not something related to react
   + e.g. constants, etc.
 
+[ 16/03/2023 05:26PM Day 11 ]
+
+-- 40. NewPostForm 2: PostTextInputs (Post Title & Body)
+  + 
 
   
 

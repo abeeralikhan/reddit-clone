@@ -68,4 +68,5 @@ const TextInputs: React.FC<TextInputsProps> = ({
     </Stack>
   );
 };
+
 export default TextInputs;

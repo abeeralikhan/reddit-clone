@@ -722,7 +722,38 @@
 [ 16/03/2023 05:26PM Day 11 ]
 
 -- 40. NewPostForm 2: PostTextInputs (Post Title & Body)
-  + 
+
+[ 17/03/2023 09:50PM Day 12 ]
+
+-- 41. NewPostForm 3: ImageUpload Component
+  + To let users select files from their file system
+  + A normal button wont work
+  + We wanna use here an input element
+  + We then have to make the type of that input element "file"
+
+  + Button the input element having the type "file" looks ugly
+  + What we can do is when we click the button, the button clicks the file upload input
+
+  + We will use useRef hook to make this functionality become possible
+
+  - Input having file type
+    + onChange will run when a image is selected
+    + We can get what image is selected by using the value property
+
+    - How to read what file user uploaded?
+      + event.target.files --> An array of selected file
+      >> const reader = new FileReader() --> Will be used to read files
+      >> reader.readAsDataURL(' fileName ') --> To read actual file
+      >> reader.onload = (readerEvent) => {} --> To perform operations once the file is read
+
+    + We will store the uploaded file in the selectedFile state
+
+    + Once user has uploaded the file, we want to change the tab
+
+    
+
+
+
 
   
 

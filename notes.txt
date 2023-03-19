@@ -783,7 +783,27 @@
     
     + By using the bang operator, we tell typescript that we know forsure that the value exists 
 
+-- 43. Fetch All Posts in Community (usePosts custom hook, Firestore queries)
+  + We're gonna create a custom hook for posts
+  + Because posts gonna share some common logic
+  + Voting on posts
+  + Deleting posts, etc..
 
+  - How to get posts of a community?
+    + Now, we need to perform some firebase queries
+    + SELECT * FROM POSTS WHERE communityId = id;
+
+    + We perfrom queries in firebase using some functions
+    + query(collectionReference, where(), ...)
+    + where('filedName', '==', fieldValue)
+    + orderBy('fieldName', 'asce')
+
+    >> const postsQuery = query(...)
+    >> const postDocs = await getDocs(postsQuery)
+
+  + To perform queries in firebase, we need to enable indexing
+
+  
 
 
 

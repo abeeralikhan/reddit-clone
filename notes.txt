@@ -750,7 +750,42 @@
 
     + Once user has uploaded the file, we want to change the tab
 
+[ 19/03/2023 08:45PM Day 13 ]
+
+-- 42. handleCreatePost Function (Save Posts to Firestore, Upload Image to Firebase Storage)
+  + We have created a post creation form
+  + And, image upload functionality
+
+  + Now, we need to store this information in the database
+
+  + We will store our Posts in firestore database
+  + We will store images in firebase storage
+
+  - Steps in post creation
+    + We will first store the post in our db
+    + Then, we will check for the image and upload it as well
+    + Now we can get imageURL by using the function getImageURL
+    + We will update the post in the db and add imageURL with it as well
+    + Finally, we will redirect the user to the community page
+
+    + Note: We are creating a post first without uploading the image. 
+    + This is because if we uploaded the image first, and then there was some error in post creation
+    + We would have an unnecessary image in the storage
+    + Therefore, creating a post first is a good option
+
+  + We're going to create a post atom, because we will need at multiple pages
+
+  + We will access the community id from the url
+  + Using the useRouter hook
+
+  - The bang operator in typescript
+    >> user.email!.split(@)[0]
     
+    + By using the bang operator, we tell typescript that we know forsure that the value exists 
+
+
+
+
 
 
 

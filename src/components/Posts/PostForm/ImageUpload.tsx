@@ -66,4 +66,5 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     </Flex>
   );
 };
+
 export default ImageUpload;

@@ -819,7 +819,8 @@
 
   + Loading components are very important to improve the user experience
 
-  
+-- 46. Deleting Posts (handleDelete function, TS promises)
+  + 
 
 
 
@@ -832,26 +833,3 @@
 
 
   
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

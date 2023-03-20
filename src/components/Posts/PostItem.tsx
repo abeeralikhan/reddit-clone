@@ -138,7 +138,7 @@ const PostItem: React.FC<PostItemProps> = ({
               align="center"
               p="8px 10px"
               borderRadius={4}
-              _hover={{ bg: "gray.200" }}
+              _hover={{ bg: "gray.200", color: "red" }}
               cursor="pointer"
               onClick={onDeletePost}
             >

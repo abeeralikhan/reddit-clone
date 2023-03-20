@@ -13,6 +13,9 @@ function usePosts() {
   return {
     postStateValue,
     setPostStateValue,
+    onVote,
+    onSelectPost,
+    onDeletePost,
   };
 }
 

@@ -803,7 +803,18 @@
 
   + To perform queries in firebase, we need to enable indexing
 
+[ 20/03/2023 09:20PM Day 14 ]
+
+-- 44. PostItem Component
+  + When you use async functions you dont need define the return type
+
+  + We will use moment libray to show when the post was created
+  >> npm i moment
+
   
+
+
+
 
 
 

@@ -16,7 +16,7 @@ export type Post = {
 };
 
 interface PostState {
-  selectedPost: Post | null;
+  selectedPost: Post | null; // will be used for individual post
   posts: Post[];
   // postVotes
 }

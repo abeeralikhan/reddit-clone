@@ -1,5 +1,5 @@
 import { Post } from "@/src/atoms/postsAtom";
-import { Flex, Icon, Stack, Text, Image } from "@chakra-ui/react";
+import { Flex, Icon, Stack, Text, Image, Skeleton } from "@chakra-ui/react";
 import moment from "moment";
 import React from "react";
 import { AiOutlineDelete } from "react-icons/ai";
@@ -12,6 +12,7 @@ import {
   IoArrowUpCircleSharp,
   IoBookmarkOutline,
 } from "react-icons/io5";
+import { useState } from "react";
 
 type PostItemProps = {
   post: Post;
@@ -30,6 +31,7 @@ const PostItem: React.FC<PostItemProps> = ({
   onVote,
   userVoteValue,
 }) => {
+  const [loadingImage, setLoadingImage] = useState(true);
   return (
     <Flex
       border="1px solid"
@@ -87,7 +89,16 @@ const PostItem: React.FC<PostItemProps> = ({
           <Text fontSize="10pt">{post.body}</Text>
           {post.imageURL && (
             <Flex justify="center" align="center" p={2}>
-              <Image src={post.imageURL} alt="Post Image" maxHeight="460px" />
+              {loadingImage && (
+                <Skeleton height="200px" width="100%" borderRadius={4} />
+              )}
+              <Image
+                src={post.imageURL}
+                alt="Post Image"
+                maxHeight="460px"
+                display={loadingImage ? "none" : "unset"}
+                onLoad={() => setLoadingImage(false)}
+              />
             </Flex>
           )}
         </Stack>

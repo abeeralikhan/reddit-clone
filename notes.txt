@@ -811,7 +811,17 @@
   + We will use moment libray to show when the post was created
   >> npm i moment
 
+-- 45. PostLoader Component
+  + It will show post skeleton while the posts are being loaded from the database
+
+  + Chakra UI makes it easier
+  + Chakra UI provides a lot skeleton components
+
+  + Loading components are very important to improve the user experience
+
   
+
+
 
 
 

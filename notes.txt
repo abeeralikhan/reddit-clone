@@ -827,6 +827,15 @@
   + If the post was not successfully deleted we need to notify the user
   + We will do all the error handling in the handleDelete function
 
+-- 47. About Community Component (currentCommunity recoil state)
+  - We will be displaying the about community page on three pages
+    1. Community Page
+    2. Single Post Page
+    3. Submit Post Page
+
+  + AboutCommunity component consists current community data
+
+  + toLocaleString() --> Converts a number that has commas in it 
 
 
 

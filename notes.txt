@@ -820,7 +820,12 @@
   + Loading components are very important to improve the user experience
 
 -- 46. Deleting Posts (handleDelete function, TS promises)
-  + 
+  + If we have a onDeletePost function
+  + Then, why do we need a handleDelete function?
+
+  + Because, the handleDelete function will do error handling for us
+  + If the post was not successfully deleted we need to notify the user
+  + We will do all the error handling in the handleDelete function
 
 
 

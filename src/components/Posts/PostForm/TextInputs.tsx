@@ -1,4 +1,5 @@
 import { Button, Flex, Stack, Textarea, Input } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import React from "react";
 
 type TextInputsProps = {
@@ -6,21 +7,26 @@ type TextInputsProps = {
     title: string;
     body: string;
   };
+  loading: boolean;
+  loadingCancelPost: boolean;
   onChange: (
     event:
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
   handleCreatePost: () => void;
-  loading: boolean;
+  handleCancelPost: () => {};
 };
 
 const TextInputs: React.FC<TextInputsProps> = ({
   textInputs,
+  loading,
+  loadingCancelPost,
   onChange,
   handleCreatePost,
-  loading,
+  handleCancelPost,
 }) => {
+  const router = useRouter();
   return (
     <Stack spacing={3} width="100%">
       <Input
@@ -55,6 +61,16 @@ const TextInputs: React.FC<TextInputsProps> = ({
         onChange={onChange}
       />
       <Flex justify="flex-end">
+        <Button
+          variant="outline"
+          height="34px"
+          padding="0px 30px"
+          isLoading={loadingCancelPost}
+          mr={2}
+          onClick={handleCancelPost}
+        >
+          Cancel
+        </Button>
         <Button
           height="34px"
           padding="0px 30px"

@@ -25,6 +25,7 @@ import {
   AlertTitle,
   AlertDescription,
 } from "@chakra-ui/react";
+import useSelectFile from "@/src/hooks/useSelectFile";
 
 type NewPostFormProps = {
   user: User;
@@ -65,8 +66,9 @@ const NewPostForm: React.FC<NewPostFormProps> = ({ user }) => {
     title: "",
     body: "",
   });
-  const [selectedFile, setSelectedFile] = useState<string>();
+  const { selectedFile, setSelectedFile, onSelectFile } = useSelectFile();
   const [loading, setLoading] = useState(false);
+  const [loadingCancelPost, setLoadingCancelPost] = useState(false);
   const [error, setError] = useState(false);
 
   const handleCreatePost = async () => {
@@ -115,18 +117,10 @@ const NewPostForm: React.FC<NewPostFormProps> = ({ user }) => {
     setLoading(false);
   };
 
-  const onSelectImage = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const reader = new FileReader();
-
-    if (event.target.files?.[0]) {
-      reader.readAsDataURL(event.target.files[0]);
-    }
-
-    reader.onload = (readerEvent) => {
-      if (readerEvent.target?.result) {
-        setSelectedFile(readerEvent.target.result as string);
-      }
-    };
+  const handleCancelPost = async () => {
+    setLoadingCancelPost(true);
+    await router.push(`/r/${router.query.communityId}`);
+    setLoadingCancelPost(false);
   };
 
   const onTextChange = (
@@ -159,15 +153,17 @@ const NewPostForm: React.FC<NewPostFormProps> = ({ user }) => {
         {selectedTab === "Post" && (
           <TextInputs
             textInputs={textInputs}
+            loading={loading}
+            loadingCancelPost={loadingCancelPost}
             onChange={onTextChange}
             handleCreatePost={handleCreatePost}
-            loading={loading}
+            handleCancelPost={handleCancelPost}
           />
         )}
         {selectedTab == "Images & Video" && (
           <ImageUpload
             selectedFile={selectedFile}
-            onSelectImage={onSelectImage}
+            onSelectImage={onSelectFile}
             setSelectedFile={setSelectedFile}
             setSelectedTab={setSelectedTab}
           />

@@ -1,4 +1,5 @@
 import { CommunityState } from "@/src/atoms/communitesAtom";
+import About from "@/src/components/Community/About";
 import PageContent from "@/src/components/Layout/PageContent";
 import NewPostForm from "@/src/components/Posts/NewPostForm";
 import { auth } from "@/src/firebase/clientApp";
@@ -19,7 +20,9 @@ const SubmitPostPage: React.FC = () => {
         </Box>
         {user && <NewPostForm user={user} />}
       </>
-      <>{/* <About /> */}</>
+      <>
+        {/* <About communityData={communityStateValue.currentCommunity} /> */}
+      </>
     </PageContent>
   );
 };

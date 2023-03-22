@@ -837,6 +837,15 @@
 
   + toLocaleString() --> Converts a number that has commas in it 
 
+[ 22/03/2023 08:18PM Day 15 ]
+
+-- 48. Customize Community Image (useSelectFile, admin/moderator permissions)
+  + To show the new image without refreshing the page
+  + We need to use the state value
+  + Because, we need to refresh the page to load a new image from the database
+
+  
+
 
 
 

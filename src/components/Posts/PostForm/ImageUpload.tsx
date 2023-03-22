@@ -55,9 +55,12 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           >
             Upload
           </Button>
-          <Input
-            ref={selectedFileRef}
+
+          <input
+            id="file-upload"
             type="file"
+            accept="image/x-png,image/gif,image/jpeg"
+            ref={selectedFileRef}
             onChange={onSelectImage}
             hidden
           />

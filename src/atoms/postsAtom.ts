@@ -23,7 +23,7 @@ export type PostVote = {
 };
 
 interface PostState {
-  selectedPost: Post | null; // will be used for individual post
+  selectedPost: Post | null;
   posts: Post[];
   postVotes: PostVote[];
 }

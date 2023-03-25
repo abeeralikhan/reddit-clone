@@ -844,7 +844,10 @@
   + We need to use the state value
   + Because, we need to refresh the page to load a new image from the database
 
-  
+[ 26/03/2023 01:49AM Day 16 ]
+
+-- 49. Voting on Posts (user postVotes collection batched writes)
+   +
 
 
 

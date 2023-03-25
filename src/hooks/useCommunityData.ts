@@ -67,7 +67,10 @@ const useCommunityData = () => {
   // Call when there's a logged in user
   // Run again if user changes
   useEffect(() => {
-    if (!user) return;
+    if (!user) {
+      setCommunityStateValue((prev) => ({ ...prev, mySnippets: [] }));
+      return;
+    }
     getMySnippets();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
